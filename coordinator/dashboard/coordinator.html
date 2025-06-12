@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<style>
+		.monospace {
+			font-family: monospace;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		div {
+			margin-top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="root">
+		<div>
+			<label>Lovense Remote URL:</label>
+			<input id="lovenseRemoteURL" type="text" style="width: 50%;" />
+			<button id="connectButton">Connect</button>
+		</div>
+		<div>
+			<h2>Lovense Remote</h2>
+			<h3>
+				<label>Status:</label>
+				<span id="connectionStatus" style="color: red;">Disconnected</span>
+			</h3>
+			<table style="width: 100%;">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>ID</th>
+						<th>Device</th>
+						<th>Battery</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody id="deviceList"></tbody>
+			</table>
+		</div>
+		<div>
+			<h2>Action Queue</h2>
+			<h3>
+				<label>Status:</label>
+				<span id="queueStatus" style="color: white;">Idle</span>
+			</h3>
+			<table style="width: 100%;">
+				<thead>
+					<tr>
+						<th>Action</th>
+						<th>Time</th>
+						<th>Patron</th>
+					</tr>
+				</thead>
+				<tbody id="actionsQueue"></tbody>
+			</table>
+		</div>
+	</div>
+	<script type="module" src="./coordinator.js"></script>
+</body>
+
+</html>

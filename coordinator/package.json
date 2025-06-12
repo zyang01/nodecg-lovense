@@ -1,0 +1,57 @@
+{
+  "name": "coordinator",
+  "version": "0.0.0",
+  "description": "A broker bundle to coordinate actions between other optional bundles depending on streaming requirements",
+  "homepage": "https://github.com/zyang01/nodecg-lovense",
+  "author": {
+    "name": "AngelWithAShotgun",
+    "email": "Aaron@AngelWithAShotgun.gay",
+    "url": "https://angelwithashotgun.gay/"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "Lovense",
+    "OBS",
+    "NodeCG",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "dashboardPanels": [
+      {
+        "name": "coordinator",
+        "title": "Coordinator",
+        "width": 4,
+        "file": "coordinator.html",
+        "headerColor": "#525F78"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": "git@github.com:zyang01/nodecg-lovense.git",
+  "license": "MIT"
+}
