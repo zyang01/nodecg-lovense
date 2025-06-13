@@ -36,6 +36,13 @@
         "width": 4,
         "file": "stripchat.html",
         "headerColor": "#525F78"
+      },
+      {
+        "name": "chaturbate",
+        "title": "Chaturbate",
+        "width": 4,
+        "file": "chaturbate.html",
+        "headerColor": "#525F78"
       }
     ],
     "graphics": [

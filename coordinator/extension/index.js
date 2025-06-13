@@ -10,6 +10,7 @@ const httpsAgent = new https.Agent({
 const webdriver = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 const stripchat = require("./stripchat");
+const chaturbate = require("./chaturbate");
 
 function setCustomRoutes(nodecg, actionsQueueReplicant) {
   const router = nodecg.Router();
@@ -160,6 +161,19 @@ module.exports = function (nodecg) {
       })
       .catch((error) => {
         nodecg.log.error("Error starting Stripchat extension:", error);
+        ack(error);
+      });
+  });
+
+  nodecg.listenFor("startChaturbate", async (_, ack) => {
+    chaturbate
+      .start(nodecg)
+      .then(() => {
+        nodecg.log.info("Chaturbate extension started successfully.");
+        ack(null);
+      })
+      .catch((error) => {
+        nodecg.log.error("Error starting Chaturbate extension:", error);
         ack(error);
       });
   });
