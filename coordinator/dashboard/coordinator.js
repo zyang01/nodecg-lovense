@@ -1,12 +1,11 @@
-const connectButton = document.querySelector("#connectButton");
-const connectionStatus = document.querySelector("#connectionStatus");
 const lovenseRemoteURLInput = document.querySelector("#lovenseRemoteURL");
-
 const lovenseRemoteURLReplicant = nodecg.Replicant("lovenseRemoteURL");
 NodeCG.waitForReplicants(lovenseRemoteURLReplicant).then(() => {
   lovenseRemoteURLInput.value = lovenseRemoteURLReplicant.value;
 });
 
+const connectButton = document.querySelector("#connectButton");
+const connectionStatus = document.querySelector("#connectionStatus");
 const deviceList = document.querySelector("#deviceList");
 const deviceListReplicant = nodecg.Replicant("deviceList");
 NodeCG.waitForReplicants(deviceListReplicant).then(() => {
@@ -37,5 +36,28 @@ NodeCG.waitForReplicants(deviceListReplicant).then(() => {
 
     connectionStatus.innerText = "Connected";
     connectionStatus.style.color = "green";
+  });
+});
+
+const actionsQueue = document.querySelector("#actionsQueue");
+const actionsQueueReplicant = nodecg.Replicant("actionsQueue");
+NodeCG.waitForReplicants(actionsQueueReplicant).then(() => {
+  actionsQueueReplicant.on("change", (actions) => {
+    if (!Array.isArray(actions) || actions.length === 0) {
+      actionsQueue.innerHTML =
+        "<tr><td colspan='3'>No actions in queue</td></tr>";
+      return;
+    }
+
+    actionsQueue.innerHTML = actions.reduce(
+      (html, action) =>
+        html +
+        `<tr>
+                <td>${action.name}</td>
+                <td>${action.duration}</td>
+                <td>${action.patron}</td>
+            </tr>`,
+      ""
+    );
   });
 });

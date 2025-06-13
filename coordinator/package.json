@@ -29,6 +29,13 @@
         "width": 4,
         "file": "coordinator.html",
         "headerColor": "#525F78"
+      },
+      {
+        "name": "stripchat",
+        "title": "Stripchat",
+        "width": 4,
+        "file": "stripchat.html",
+        "headerColor": "#525F78"
       }
     ],
     "graphics": [
@@ -53,5 +60,8 @@
     ]
   },
   "repository": "git@github.com:zyang01/nodecg-lovense.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "selenium-webdriver": "^4.33.0"
+  }
 }
